@@ -1,0 +1,6 @@
+h:\Files\Files\bin\Debug\Files.exe.config
+h:\Files\Files\bin\Debug\Files.exe
+h:\Files\Files\bin\Debug\Files.pdb
+h:\Files\Files\obj\Debug\Files.csprojResolveAssemblyReference.cache
+h:\Files\Files\obj\Debug\Files.exe
+h:\Files\Files\obj\Debug\Files.pdb
