@@ -21,7 +21,7 @@ namespace Files
 
         static void ReadCSVFile()
         {
-            Console.WriteLine("\n Reading all lines from CSV file and printing each line to the console \n");
+            Console.WriteLine("\n Reading all lines from CSV file and printing each artist to the console \n");
 
             StreamReader sr = new StreamReader(@"h:\playlist2017.txt");
 
@@ -40,10 +40,10 @@ namespace Files
 
                 fieldArray = lineIn.Split(',');
 
-                int songLength = int.Parse(fieldArray[2]);
+                int songLength = int.Parse(fieldArray[2]); // store lenght of son in songLength
 
 
-                totalTime += songLength;
+                totalTime += songLength; // accumulating songlength
 
                 Console.WriteLine(fieldArray[0]);
 
