@@ -22,15 +22,18 @@ namespace Files
         static void ReadCSVFile()
         {
             Console.WriteLine("\n Reading all lines from CSV file and printing each artist to the console \n");
+            Console.WriteLine("\n Accumulating the length of all songs printing totalto the console \n");
 
-            StreamReader sr = new StreamReader(@"h:\playlist2017.txt");
+            StreamReader sr = new StreamReader("playlist2017.txt");
+            
+            // i have placed the file in the debug folder, so no path needed
 
 
             string lineIn; // will hold data that we read in
 
-            string[] fieldArray = new string[3];
+            string[] fieldArray = new string[3]; // array to store chopped up line
 
-            int totalTime = 0;
+            int totalTime = 0; // variable to accumulate time of all songs
             
             lineIn = sr.ReadLine(); // read in first line from file
 
@@ -40,21 +43,21 @@ namespace Files
 
                 fieldArray = lineIn.Split(',');
 
-                int songLength = int.Parse(fieldArray[2]); // store lenght of son in songLength
+                int songLength = int.Parse(fieldArray[2]); // store length of song in songLength
 
 
                 totalTime += songLength; // accumulating songlength
 
-                Console.WriteLine(fieldArray[0]);
+                Console.WriteLine(fieldArray[0]); // print artist name
 
-                lineIn = sr.ReadLine();
+                lineIn = sr.ReadLine(); // read in the next line
 
 
             }
 
             Console.WriteLine("Total playlist playing time = {0}",totalTime);
 
-            Console.WriteLine("\nat end of file");
+            Console.WriteLine("\n all records in file processed");
 
             sr.Close();
         }
