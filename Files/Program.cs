@@ -35,6 +35,8 @@ namespace Files
             Console.WriteLine("\n Reading all lines from CSV file and printing each artist to the console \n");
             Console.WriteLine("\n Accumulating the length of all songs printing totalto the console \n");
 
+
+            // playlist2017 is in the bin folder of solution, hence no need to specify location
             FileStream fs = new FileStream("playlist2017.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             
