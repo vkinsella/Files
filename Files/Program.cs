@@ -21,6 +21,7 @@ namespace Files
 
         static void GetFileInformation()
         {
+            // playlist2017 is in the bin folder of solution, hence no need to specify location
             string myPath = @"playlist2017.txt";
             FileInfo f = new FileInfo(myPath);
             Console.WriteLine(f.Length);
