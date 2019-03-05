@@ -19,12 +19,24 @@ namespace Files
             ReadCSVFile();
         }
 
+        static void GetFileInformation()
+        {
+            string myPath = @"playlist2017.txt";
+            FileInfo f = new FileInfo(myPath);
+            Console.WriteLine(f.Length);
+            Console.WriteLine(f.Name);
+            Console.WriteLine(f.FullName);
+            Console.WriteLine(f.DirectoryName);
+
+
+        }
         static void ReadCSVFile()
         {
             Console.WriteLine("\n Reading all lines from CSV file and printing each artist to the console \n");
             Console.WriteLine("\n Accumulating the length of all songs printing totalto the console \n");
 
-            StreamReader sr = new StreamReader("playlist2017.txt");
+            FileStream fs = new FileStream("playlist2017.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
             
             // i have placed the file in the debug folder, so no path needed
 
@@ -70,8 +82,9 @@ namespace Files
             // create a streamwriter object called sw (you can call it what you like), which allows us to write characters to a file
             // you can think of it as a pipe connecting our program to the file, which facilitates different operations
 
-            
-            StreamWriter sw = new StreamWriter(@"h:\myfile.txt"); 
+            FileStream fs = new FileStream(@"h:\myfile.txt", FileMode.Open, FileAccess.Write);
+
+            StreamWriter sw = new StreamWriter(fs); 
             
             // note the @, this means the string is read verbatim (as is), escape chars are ignored
             // note also, that generally it is a bad idea to hard code the path of a file 
@@ -94,7 +107,9 @@ namespace Files
 
             Console.WriteLine("\n Reading all lines from the file and printing each line to the console \n");
 
-            StreamReader sr = new StreamReader(@"h:\myfile.txt");
+
+            FileStream fs = new FileStream(@"h:\myfile.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
 
             
             string lineIn; // will hold data that we read in
